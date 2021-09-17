@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { MainComponentHooks } from './components/MainComponentHooks';
+import MainComponetConnect from './components/MainComponetConnect';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { PostDetail } from './components/PostDetail';
 
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Switch>
+        <Route path="/" exact component={MainComponetConnect} />
+        {/* <Route path="/" exact component={MainComponentHooks} /> */}
+        <Route path="/post/:id"  component={PostDetail}/>
+      </Switch>
     </div>
+    </Router>
   );
 }
 
