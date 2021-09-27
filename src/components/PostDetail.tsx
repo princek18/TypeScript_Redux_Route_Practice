@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { RouteComponentProps, StaticContext } from 'react-router';
+import { postState } from '../redux/reducer/reducers';
 
+interface IState{
+    post:postState
+}
 
-export const PostDetail:React.FC<any> = (props) => {
+export const PostDetail:React.FC<RouteComponentProps<{}, StaticContext, IState>> = (props) => {
     const {post} = props.location.state;
     
     return (

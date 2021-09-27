@@ -9,8 +9,8 @@ function App() {
     <Router>
     <div className="App">
       <Switch>
-        <Route path="/" exact component={MainComponetConnect} />
-        {/* <Route path="/" exact component={MainComponentHooks} /> */}
+        {/* <Route path="/" exact component={MainComponetConnect} /> */}
+        <Route path="/" exact component={MainComponentHooks} />
         <Route path="/post/:id"  component={PostDetail}/>
       </Switch>
     </div>
